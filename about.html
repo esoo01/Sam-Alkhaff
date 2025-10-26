@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من نحن؟ - سَام الخفي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display.swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    
+    <a href="index.html" class="back-link">← العودة للرئيسية</a>
+
+    <h1 class="page-header">من نحن؟ (مهمتنا)</h1>
+
+    <section class="reveal">
+        <h4>من أنا؟</h4>
+        <p class="lead">سَام الخفي — محلل، باحث، ومحقق رقمي. أستخدم الأدلة الرقمية والمنطق لكشف ما لا يراه الآخرون. أؤمن أن كل سر له مفتاح، وأن الحقيقة تحتاج صبر ودقة.</p>
+    </section>
+
+    <section class="reveal" style="background: var(--card); border: 1px solid var(--gold);">
+        <h3 style="color:var(--gold);">مهمتنا: التوعية والتحذير</h3>
+        <p>هدفنا ليس ربحي. هدفنا هو "التوعية" و "التحذير".</p>
+        <p>نخطط لكشف كل الأعمال غير القانونية والمخادعة. كل همنا مصلحتك. انشر وتابعنا على كل الصفحات عشان تعرف الحقيقة.</p>
+        <p><strong>حذّر غيرك. شير عشان كله ياخد باله.</strong></p>
+    </section>
+
+    <section id="videos" class="reveal">
+        <h4>أحدث الفيديوهات</h4>
+        <div class="grid">
+          <div>
+            <div class="video-wrap">
+              <iframe src="https://www.tiktok.com/embed/7565614988136647947" title="TikTok Video" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top:8px;color:var(--muted)">TikTok — نفس الفيديو</div>
+          </div>
+          <div>
+            <div class="video-wrap">
+              <iframe src="https://www.youtube.com/embed/z6I4kS52FUo?si=-V5C2GQjnAlkAAZR" title="YouTube Short" allowfullscreen></iframe>
+            </div>
+            <div style="margin-top:8px;color:var(--muted)">YouTube Short — نفس الفيديو</div>
+          </div>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal">
+        <h4>تواصل معنا</h4>
+        <p class="lead">للتواصل التجاري، أو إرسال أدلة لقضية جديدة:</p>
+        <p><strong>sam.alkhaff@gmail.com</strong></p>
+        
+        <div class="social-links">
+            <a href="https://www.youtube.com/@SamAl-khaff?sttick=0" target="_blank" class="btn btn-ghost">YouTube</a>
+            <a href="https://www.tiktok.com/@sam.alkhaff" target="_blank" class="btn btn-ghost">TikTok</a>
+            <a href="https://www.instagram.com/sam.alkhaff/" target="_blank" class="btn btn-ghost">Instagram</a>
+        </div>
+        
+        <form onsubmit="event.preventDefault(); alert('تم إرسال النموذج (محاكاة). استخدم الإيميل للتواصل الحقيقي.');" class="contact-form">
+          <input placeholder="اسمك">
+          <input placeholder="بريدك الإلكتروني">
+          <textarea placeholder="رسالتك (أو ملف القضية)" rows="5"></textarea>
+          <button class="btn btn-primary" type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer class="reveal">
+          © <span id="year"></span> Sam Al-Khaff • كل سرّ ليه مفتاح.
+    </footer>
+
+</div> <script src="script.js"></script>
+
+</body>
+</html>

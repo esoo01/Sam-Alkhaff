@@ -1,147 +1,54 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sam Al-Khaff | سَام الخفي</title>
-<meta name="description" content="Sam Al-Khaff — Mystery. Investigation. Secrets. Mind. Truth.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --bg:#0b0b0d; 
-  --card:#0f1720; 
-  --muted:#9aa3b2; 
-  --accent:#1f6feb; 
-  --gold:#c9b37b;
-}
-*{box-sizing:border-box}
-body,html{margin:0;padding:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#050507,#0b0b0d,#010101,#0b0b0d);background-size:400% 400%;animation:bgAnim 25s ease infinite;color:#e6eef8;overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-.container{max-width:1200px;margin:0 auto;padding:20px;}
-
-/* Header */
-header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
-.logo{width:80px;height:80px;border-radius:15px;background:linear-gradient(135deg,var(--card),#0b1220);display:flex;justify-content:center;align-items:center;font-weight:800;font-size:22px;box-shadow:0 6px 18px rgba(0,0,0,.7);}
-.header-title{flex:1;margin-right:20px}
-.header-title h1{margin:0;font-size:28px}
-.header-title p{margin:4px 0 0;color:var(--muted);font-size:14px}
-
-/* Hero */
-.hero{display:grid;grid-template-columns:1fr 400px;gap:30px;margin-top:30px}
-.hero-left h2{font-size:32px;margin:0}
-.tagline{color:var(--gold);margin-top:10px;font-weight:600}
-.hero-left p{margin-top:16px;color:var(--muted);line-height:1.6;font-size:16px}
-.cta{margin-top:20px;display:flex;gap:12px}
-.btn{padding:12px 20px;border-radius:12px;border:0;cursor:pointer;font-weight:600;transition:0.3s}
-.btn-primary{background:var(--accent);color:white}
-.btn-primary:hover{transform:scale(1.05);box-shadow:0 0 15px var(--accent);}
-.btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.06);}
-.btn-ghost:hover{color:var(--gold);border-color:var(--gold);transform:scale(1.05);}
-
-/* Avatar */
-.hero-right{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
-.hero-right img{width:250px;height:250px;border-radius:15px;object-fit:cover;border:2px solid rgba(255,255,255,0.05);box-shadow:0 10px 30px rgba(0,0,0,0.6);animation:float 6s ease-in-out infinite;}
-.signature{font-family:'Lateef',serif;font-size:36px;margin-top:12px;color:var(--gold)}
-
-/* Reveal animations */
-.reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.9,.3,1);}
-.reveal.visible{opacity:1;transform:none;}
-
-/* Sections */
-section{margin-top:40px;padding:20px;background:rgba(255,255,255,0.02);border-radius:15px;box-shadow:0 6px 30px rgba(0,0,0,.6);}
-h3,h4{margin:0 0 12px 0}
-p.lead{color:var(--muted);line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-
-/* Video embed */
-.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;}
-.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
-
-/* Footer */
-footer{text-align:center;margin-top:40px;color:var(--muted);font-size:14px}
-
-/* Animations */
-@keyframes bgAnim{
-  0%{background-position:0 0;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0 0;}
-}
-@keyframes float{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-15px);}
-}
-
-@media(max-width:880px){
-  .hero{grid-template-columns:1fr;gap:20px}
-  .hero-right img{width:180px;height:180px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Al-Khaff | سَام الخفي</title>
+    <meta name="description" content="Sam Al-Khaff — Mystery. Investigation. Secrets. Mind. Truth.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
 
-<header>
-  <div class="logo"><img src="logo.png" alt="Sam Al-Khaff Logo" style="width:70px;height:70px;border-radius:10px;"></div>
-  <div class="header-title">
-    <h1>Sam Al-Khaff | سَام الخفي</h1>
-    <p>أسطورة الغموض وكاشف الأسرار 🔍</p>
-  </div>
-  <div><small style="color:var(--muted)">DOB: 1 July 1996</small></div>
-</header>
+<div class="container-full">
 
-<div class="hero">
-  <div class="hero-left reveal">
-    <h2>المفتاح الأول 🔑</h2>
-    <div class="tagline">كل سرّ ليه مفتاح... وأنا المفتاح.</div>
-    <p class="lead">مرحبًا، أنا سَام الخفي — محقق رقمي ومكتشف أسرار. هنا أشارك مقاطع قصيرة، تحليلات، وحلقات تحقيق تكشف الوجوه المختفية والحقائق المجهولة.</p>
-    <div class="cta">
-            <button class="btn btn-primary" onclick="location.href='#cases'">شاهد القضايا</button>
-      <button class="btn btn-ghost" onclick="location.href='#contact'">تواصل</button>
-    </div>
-    <div style="margin-top:20px;color:var(--muted)">Words: Mystery · Investigation · Secrets · Mind · Truth</div>
-  </div>
+    <header>
+      <div class="logo"><img src="logo.png" alt="Sam Al-Khaff Logo" style="width:70px;height:70px;border-radius:10px;"></div>
+      <div class="header-title">
+        <h1>Sam Al-Khaff | سَام الخفي</h1>
+        <p>أسطورة الغموض وكاشف الأسرار 🔍</p>
+      </div>
+      <div><small style="color:var(--muted)">DOB: 1 July 1996</small></div>
+    </header>
 
-  <div class="hero-right reveal">
-    <img src="logo.png" alt="Sam Al-Khaff Logo">
-    <div class="signature">سَام الخفي</div>
-    <div style="display:flex;gap:10px;margin-top:10px;">
-      <a href="https://www.youtube.com/@SamAl-khaff?sttick=0" target="_blank">YouTube</a>
-      <a href="https://www.tiktok.com/@sam.alkhaff" target="_blank">TikTok</a>
-      <a href="https://www.instagram.com/sam.alkhaff/" target="_blank">Instagram</a>
-    </div>
-  </div>
-</div>
+    <div class="hero">
+      <div class="hero-left reveal">
+        <h2>المفتاح الأول 🔑</h2>
+        <div class="tagline">كل سرّ ليه مفتاح... وأنا المفتاح.</div>
+        <p class="lead">مرحبًا، أنا سَام الخفي — محقق رقمي ومكتشف أسرار. هنا أشارك تحليلات وحلقات تحقيق تكشف الوجوه المختفية والحقائق المجهولة.</p>
+        
+            <div class="cta">
+          <a href="cases.html" class="btn btn-gold">اذهب إلى ملف القضايا</a>
+          <a href="about.html" class="btn btn-ghost">من نحن؟ (المهمة والتواصل)</a>
+        </div>
 
-<section id="cases" class="reveal" style="background:var(--card); border: 1px solid var(--gold); text-align: center;">
-  
-  <h3 style="color:var(--gold);">ملف القضايا المفتوحة</h3>
-  
-  <p class="lead" style="color:var(--muted);">
-    الأرشيف الرسمي لتحقيقات "سَام الخفي".
-    <br>
-    هنا يتم توثيق الأدلة وكشف الحقائق.
-  </p>
-  
-  <h4>القضية الحالية: 001 - المعاهد الوهمية</h4>
-  
-  <a href="cases.html" class="btn btn-primary" style="margin-top:10px; background:var(--gold); color:var(--bg); font-family: 'Poppins', sans-serif;">
-    اذهب إلى أرشيف القضايا
-  </a>
+        <div style="margin-top:20px;color:var(--muted)">Words: Mystery · Investigation · Secrets · Mind · Truth</div>
+      </div>
 
-</section>
-<section id="about" class="reveal">
-  <h4>من أنا</h4>
-  <p class="lead">سَام الخفي — محلل، باحث، ومحقق رقمي. أستخدم الأدلة الرقمية والمنطق لكشف ما لا يراه الآخرون. أؤمن أن كل سر له مفتاح، وأن الحقيقة تحتاج صبر ودقة.</p>
-</section>
+      <div class="hero-right reveal">
+        <img src="logo.png" alt="Sam Al-Khaff Logo">
+        <div class="signature">سَام الخفي</div>
+      </div>
+    </div>
 
-<section id="contact" class="reveal">
-  <h4>تواصل</h4>
-  <p class="lead">للتواصل التجاري أو التعاون: <strong>sam.alkhaff@gmail.com</strong></p>
-  <form onsubmit="event.preventDefault(); alert('تم إرسال النموذج (محاكاة). استخدم الإيميل للتواصل الحقيقي.');" style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
-    <input placeholder="اسمك" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-    <input placeholder="بريدك الإلكتروني" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-    <textarea placeholder="رسالتك" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,25
+    <footer class="reveal">
+      © <span id="year"></span> Sam Al-Khaff • كل سرّ ليه مفتاح.
+    </footer>
+
+</div> <script src="script.js"></script>
+
+</body>
+</html>

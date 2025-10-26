@@ -1,0 +1,191 @@
+/* ملف الستايل المركزي
+    (style.css)
+*/
+
+:root{
+  --bg:#0b0b0d; 
+  --card:#0f1720; 
+  --muted:#9aa3b2; 
+  --accent:#1f6feb; 
+  --gold:#c9b37b;
+}
+*{box-sizing:border-box}
+body,html{margin:0;padding:0;font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#050507,#0b0b0d,#010101,#0b0b0d);background-size:400% 400%;animation:bgAnim 25s ease infinite;color:#e6eef8;overflow-x:hidden;}
+a{text-decoration:none;color:var(--accent);} /* خلينا اللينكات العادية لونها أزرق */
+a:hover{color:var(--gold);} /* ولما الماوس ييجي عليها تبقى ذهبي */
+
+.container{
+    /* قللت العرض شوية في الصفحات الداخلية عشان الكلام يتقري أحسن */
+    max-width:960px;
+    margin:0 auto;
+    padding:20px;
+}
+/* ستايل خاص للكونتينر بتاع الصفحة الرئيسية عشان يفضل واسع */
+.container-full{
+    max-width:1200px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.logo{width:80px;height:80px;border-radius:15px;background:linear-gradient(135deg,var(--card),#0b1220);display:flex;justify-content:center;align-items:center;font-weight:800;font-size:22px;box-shadow:0 6px 18px rgba(0,0,0,.7);}
+.header-title{flex:1;margin-right:20px}
+.header-title h1{margin:0;font-size:28px}
+.header-title p{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 400px;gap:30px;margin-top:30px}
+.hero-left h2{font-size:32px;margin:0}
+.tagline{color:var(--gold);margin-top:10px;font-weight:600}
+.hero-left p{margin-top:16px;color:var(--muted);line-height:1.6;font-size:16px}
+.cta{margin-top:20px;display:flex;gap:12px}
+
+/* --- *** المؤثرات الجديدة على الزراير *** --- */
+.btn{
+    padding:12px 20px;
+    border-radius:12px;
+    border:0;
+    cursor:pointer;
+    font-weight:600;
+    font-family: 'Poppins', sans-serif; /* توحيد الخط */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block; /* مهم عشان اللينكات تظهر كزرار */
+}
+/* حركة رفع + ظل (لكل الزراير) */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+/* حركة ضغطة الزرار (لكل الزراير) */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+}
+/* ستايل الزرار الأساسي (الأزرق) */
+.btn-primary{background:var(--accent);color:white}
+.btn-primary:hover{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px var(--accent);
+}
+/* ستايل الزرار الذهبي (الجديد) */
+.btn-gold {
+    background: var(--gold);
+    color: var(--bg); /* لون الكتابة أسود */
+}
+.btn-gold:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px var(--gold);
+}
+/* ستايل الزرار الشفاف */
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.06);}
+.btn-ghost:hover{
+    color:var(--gold);
+    border-color:var(--gold);
+}
+/* --- *** نهاية مؤثرات الزراير *** --- */
+
+
+/* Avatar */
+.hero-right{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.hero-right img{width:250px;height:250px;border-radius:15px;object-fit:cover;border:2px solid rgba(255,255,255,0.05);box-shadow:0 10px 30px rgba(0,0,0,0.6);animation:float 6s ease-in-out infinite;}
+.signature{font-family:'Lateef',serif;font-size:36px;margin-top:12px;color:var(--gold)}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.2,.9,.3,1);}
+.reveal.visible{opacity:1;transform:none;}
+
+/* Sections */
+section{
+    margin-top:40px;
+    padding:25px; /* زودت الـ padding شوية */
+    background:rgba(255,255,255,0.02);
+    border-radius:15px;
+    box-shadow:0 6px 30px rgba(0,0,0,.6);
+    border: 1px solid rgba(255,255,255,0.05); /* ضفت بوردر خفيف */
+}
+h1, h2, h3, h4{margin:0 0 15px 0} /* ظبطت المسافات */
+p, .lead{color:var(--muted);line-height:1.7; margin-bottom: 15px;} /* ظبطت المسافات */
+
+/* ستايلات صفحة القضايا والـ About */
+.page-header {
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background: var(--card);
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.back-link:hover {
+    background: var(--gold);
+    color: var(--bg);
+}
+
+/* ستايل ملف القضية */
+.case-file {
+    background: var(--card); /* خليته أغمق شوية */
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+.case-file h2 {
+    color: var(--gold);
+}
+.case-file img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Video embed */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px; border: 1px solid rgba(255,255,255,0.1);}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* Contact Form */
+.contact-form {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:10px
+}
+.contact-form input, .contact-form textarea {
+    padding:12px;
+    border-radius:8px;
+    border:1px solid rgba(255,255,255,0.04);
+    background:transparent;
+    color:inherit;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Footer */
+footer{text-align:center;margin-top:40px;color:var(--muted);font-size:14px}
+
+/* Animations */
+@keyframes bgAnim{
+  0%{background-position:0 0;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0 0;}
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+/* Responsive */
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr;gap:20px}
+  .hero-right img{width:180px;height:180px}
+}
