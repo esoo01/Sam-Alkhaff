@@ -1,50 +1,52 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملف القضايا - سَام الخفي</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display.swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ملف القضايا - سَام الخفي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display.swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    
-    <a href="index.html" class="back-link">← العودة للرئيسية</a>
+    
+    <a href="index.html" class="back-link">← العودة للرئيسية</a>
 
-    <h1 class="page-header">أرشيف القضايا</h1>
+    <h1 class="page-header">أرشيف القضايا</h1>
 
-    {% assign sorted_cases = site.cases | sort: "date" | reverse %}
-    {% for case in sorted_cases %}
-    
-    <article class="case-file reveal">
-        <h2 style="margin-bottom: 5px;">{{ case.title }}</h2>
-        <p style="color:var(--muted); font-size: 14px; margin-bottom: 10px;">الحالة: {{ case.status }}</p>
+    {% assign sorted_cases = site.cases | sort: "date" | reverse %}
+    {% for case in sorted_cases %}
+    
+    <article class="case-file reveal">
+        <h2 style="margin-bottom: 5px;">{{ case.title }}</h2>
+        <p style="color:var(--muted); font-size: 14px; margin-bottom: 10px;">الحالة: {{ case.status }}</p>
 
-        <p class="lead"><strong>ملخص:</strong> {{ case.summary }}</p>
-        
-        {% if case.featured_image %}
-        <img src="{{ case.featured_image }}" alt="{{ case.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
-        {% endif %}
+        <p class="lead"><strong>ملخص:</strong> {{ case.summary }}</p>
+        
+        {% if case.featured_image %}
+        <img src="{{ case.featured_image }}" alt="{{ case.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+        {% endif %}
 
-        <h3>تفاصيل الأدلة:</h3>
-        <div class="content">
-            {{ case.body }}
-        </div>
-        
-        <h3 style="margin-top:20px;">تحديثات القضية:</h3>
-        <p style="color: var(--muted);">تم النشر آلياً من لوحة التحكم بتاريخ: {{ case.date | date: "%Y-%m-%d" }}</p>
+        <h3>تفاصيل الأدلة:</h3>
+        <div class="content">
+            {{ case.body }}
+        </div>
+        
+        <h3 style="margin-top:20px;">تحديثات القضية:</h3>
+        <p style="color: var(--muted);">تم النشر آلياً من لوحة التحكم بتاريخ: {{ case.date | date: "%Y-%m-%d" }}</p>
 
-    </article>
-    
-    {% endfor %}
-    <footer class="reveal">
-      <p style="margin-bottom: 5px;">© <span id="year"></span> Sam Al-Khaff • كل سرّ ليه مفتاح.</p>
-      <p style="font-size: 12px;">جميع الحقوق محفوظه</p>
-    </footer>
+    </article>
+    
+    {% endfor %}
+    <footer class="reveal">
+      <p style="margin-bottom: 5px;">© <span id="year"></span> Sam Al-Khaff • كل سرّ ليه مفتاح.</p>
+      <p style="font-size: 12px;">جميع الحقوق محفوظه</p>
+    </footer>
 
 </div> 
 <script src="script.js"></script>
