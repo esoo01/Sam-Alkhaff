@@ -2,6 +2,8 @@ backend:
   name: git-gateway
   branch: main # اسم الفرع الرئيسي في GitHub
 
+local_backend: true # إضافة هذا السطر للتطوير المحلي
+
 publish_mode: editorial_workflow # يسمح بمراجعة القضايا قبل النشر
 media_folder: "assets/img" # مكان حفظ الصور اللي هترفعها
 
