@@ -9,14 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&family=Lateef&display.swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
 <div class="container-full">
 
     <header>
-      <div class="logo"><img src="logo.png" alt="Sam Al-Khaff Logo" style="width:70px;height:70px;border-radius:10px;"></div>
+        <div class="logo"><img src="logo.png" alt="Sam Al-Khaff Logo" style="width:70px;height:70px;border-radius:10px;"></div>
       <div class="header-title">
         <h1>Sam Al-Khaff | سَام الخفي</h1>
         <p>أسطورة الغموض وكاشف الأسرار 🔍</p>
@@ -31,9 +30,10 @@
             <div class="tagline">كل سرّ ليه مفتاح... وأنا المفتاح.</div>
         </div>
         <p class="lead" style="margin-top: 20px;">مرحبًا، أنا سَام الخفي — محقق رقمي ومكتشف أسرار. هنا أشارك تحليلات وحلقات تحقيق تكشف الوجوه المختفية والحقائق المجهولة.</p>
-        <div class="cta">
+        
+            <div class="cta" style="flex-wrap: wrap;">
           <a href="cases.html" class="btn btn-gold">اذهب إلى ملف القضايا</a>
-                <a href="admin/" class="btn btn-primary">لوحة تحكم النشر (Admin)</a>
+          <a href="admin/" class="btn btn-primary">لوحة تحكم النشر (Admin)</a>
           <a href="about.html" class="btn btn-ghost">من نحن؟ (المهمة والتواصل)</a>
         </div>
         <div style="margin-top:20px;color:var(--muted)">Words: Mystery · Investigation · Secrets · Mind · Truth</div>
@@ -49,7 +49,6 @@
         <div class="case-card">
             <img src="case-cover.jpg" alt="غلاف القضية 001">
             <div class="case-info">
-                <h3>ملف 001: المعاهد الوهمية</h3>
                 <h3>ملف 001: المعاهد الوهمية</h3>
                 <p>التحقيق جاري في ملف "النصب اللغوي" لكشف الكيانات التي تستغل أحلام الطلاب.</p>
                 <a href="cases.html" class="btn btn-gold" style="margin-top: 15px;">اقرأ ملف القضية</a>
@@ -76,17 +75,6 @@
 
 </div> 
 <script src="script.js"></script>
-<script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
-    </script>
 
 </body>
 </html>
