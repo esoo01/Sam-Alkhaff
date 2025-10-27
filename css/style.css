@@ -1,0 +1,29 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #333;
+    --text-color: #222;
+    --background-color: #fff;
+}
+
+body {
+    direction: rtl;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* .main-nav ruleset removed because it was empty */
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+}
+
+/* .case-card ruleset removed because it was empty */
+
+@media (max-width: 768px) {
+    /* ...existing code... */
+}
