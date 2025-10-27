@@ -17,28 +17,37 @@
 
     <h1 class="page-header">أرشيف القضايا</h1>
 
+    {% assign sorted_cases = site.cases | sort: "date" | reverse %}
+    {% for case in sorted_cases %}
+    
     <article class="case-file reveal">
-        <h2>ملف القضية 001: المعاهد الوهمية</h2>
-        <p style="color:var(--muted);">الحالة: قيد التحقيق...</p>
-        <p><strong>ملخص القضية:</strong> التحقيق في كيانات تدعي أنها "معاهد خاصة معتمدة" وتتقاضى مبالغ طائلة (10,000+ جنيه)، بينما الشكوك تحوم حول حقيقتها وأنها مجرد "مراكز تدريب".</p>
-        <h3>الأدلة (المرحلة الأولى - زرع الشك):</h3>
-        <p>تم نشر الأدلة الأولية على انستجرام لطرح الأسئلة وجمع شهادات الضحايا.</p>
-        
-        <img src="/case-cover.jpg" alt="غلاف القضية">
-        <img src="/case-evidence.jpg" alt="الأدلة - بروفيشنال ومسارك">
+        <h2 style="margin-bottom: 5px;">{{ case.title }}</h2>
+        <p style="color:var(--muted); font-size: 14px; margin-bottom: 10px;">الحالة: {{ case.status }}</p>
 
+        <p class="lead"><strong>ملخص:</strong> {{ case.summary }}</p>
+        
+        {% if case.featured_image %}
+        <img src="{{ case.featured_image }}" alt="{{ case.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+        {% endif %}
+
+        <h3>تفاصيل الأدلة:</h3>
+        <div class="content">
+            {{ case.body }}
+        </div>
+        
         <h3 style="margin-top:20px;">تحديثات القضية:</h3>
-        <ul>
-            <li><strong>[27 أكتوبر]:</strong> نشر المرحلة الأولى (زرع الشك). (جاري رصد ردود الأفعال).</li>
-            <li><em>سيتم إضافة التحديثات هنا...</em></li>
-        </ul>
+        <p style="color: var(--muted);">تم النشر آلياً من لوحة التحكم بتاريخ: {{ case.date | date: "%Y-%m-%d" }}</p>
+
     </article>
+    
+    {% endfor %}
     <footer class="reveal">
       <p style="margin-bottom: 5px;">© <span id="year"></span> Sam Al-Khaff • كل سرّ ليه مفتاح.</p>
       <p style="font-size: 12px;">جميع الحقوق محفوظه</p>
     </footer>
 
-</div> <script src="script.js"></script>
+</div> 
+<script src="script.js"></script>
 
 </body>
 </html>
