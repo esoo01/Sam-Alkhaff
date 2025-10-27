@@ -1,5 +1,5 @@
 /* ملف الستايل المركزي
-    (style.css)
+    (style.css) - نسخة الإصلاح النهائي
 */
 
 :root{
@@ -11,40 +11,48 @@
 }
 *{box-sizing:border-box}
 
-/* --- الكود الجديد الاحترافي للخلفية (الناعم) --- */
+/* --- إصلاح الخلفية (الكود الأبسط والأكيد) --- */
 body,html{
     margin:0;
     padding:0;
     font-family:'Poppins',sans-serif;
     color:#e6eef8;
     overflow-x:hidden;
-    /* الخلفية الأساسية (اللون الأسود) */
+
+    /* الخلفية الأساسية (اللون والجريدينت) */
     background-color: var(--bg);
-    /* الجريدينت اللي بيتحرك */
-    background-image: linear-gradient(135deg,#050507,#0b0b0d,#010101,#0b0b0d);
-    background-size: 400% 400%;
-    animation: bgAnim 25s ease infinite;
+    background-image: 
+        /* الطبقة 1: الباترن بتاعك (فوق) */
+        url('bg-pattern.png'), 
+        /* الطبقة 2: الجريدينت بتاعك (تحته) */
+        linear-gradient(135deg,#050507,#0b0b0d,#010101,#0b0b0d);
+    
+    /* إعدادات الطبقتين (بالترتيب) */
+    
+    /* 1. التكرار */
+    background-repeat: no-repeat, repeat;  /* الباترن (لا يتكرر)، الجريدينت (يتكرر) */
+    
+    /* 2. الحجم */
+    background-size: cover, 400% 400%;  /* الباترن (يغطي الشاشة)، الجريدينت (400%) */
+    
+    /* 3. المكان */
+    background-position: center center, 0 0; /* الباترن (في النص)، الجريدينت (0 0) */
+    
+    /* 4. المزج (الاحترافي) */
+    background-blend-mode: overlay, normal; /* الباترن (يمتزج)، الجريدينت (عادي) */
+    
+    /* 5. الثبات (أهم خطوة) */
+    background-attachment: fixed, scroll; /* الباترن (ثابت)، الجريدينت (يتحرك مع الأنيميشن) */
+    
+    animation: bgAnim 25s ease infinite; /* نفس الأنيميشن بتاعك */
+
+    /* هنخلي الباترن خفيف جداً عشان الكلام يبان */
+    /* (بنعملها هنا عشان نضمن إنها تشتغل) */
 }
-/* ده الحل السحري: 
-   بنضيف الباترن بتاعك كـ "طبقة" فوق خالص 
-*/
-body::before {
-    content: ""; /* لازم السطر ده */
-    position: fixed; /* هيثبت الباترن في الشاشة */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1; /* هيخلي الباترن ورا الكلام (أهم خطوة) */
-    /* إعدادات الباترن بتاعك */
-    background-image: url('bg-pattern.png');
-    background-repeat: no-repeat;     /* 1. مش هيتكرر (زي ما طلبت) */
-    background-size: cover;          /* 2. هيغطي الشاشة كلها */
-    background-position: center;     /* 3. هيتوسطن في الشاشة */
-    opacity: 0.05;                   /* 4. خليته شفاف 5% (أخف وأجمل) */
-    background-blend-mode: overlay; 
+body {
+    background-color: rgba(0,0,0,0.85); /* طبقة خفيفة أغمق عشان تبرز الباترن الخفيف */
 }
-/* --- نهاية الكود الجديد للخلفية --- */
+/* --- نهاية إصلاح الخلفية --- */
 
 
 a{text-decoration:none;color:var(--accent);}
@@ -217,16 +225,6 @@ p, .lead{color:var(--muted);line-height:1.7; margin-bottom: 15px;}
     font-size: 16px;
     color: var(--muted);
 }
-@media(max-width: 768px) {
-    .case-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .case-card img {
-        width: 100%;
-        height: 250px;
-    }
-}
 /* --- نهاية قسم القضية الأبرز --- */
 
 
@@ -290,16 +288,6 @@ p, .lead{color:var(--muted);line-height:1.7; margin-bottom: 15px;}
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
-
-@media(max-width: 768px) {
-    .quote-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .quote-card img {
-        margin: 0 auto;
-    }
-}
 /* --- نهاية قسم المقولات --- */
 
 
@@ -327,8 +315,18 @@ footer{
 /* --- نهاية تعديل الفوتر --- */
 
 
-/* Responsive */
-@media(max-width:880px){
+/* --- إصلاح مشكلة (الكلام في الجنب) --- */
+/*
+   الكود ده بيقول: متخليش التصميم (يستاك) 
+   إلا لو الشاشة صغرت أوي (أقل من 768 بيكسل)
+   وده هيخلي الصورة تظهر في الجنب على شاشتك
+*/
+@media(max-width: 768px){ /* <-- غيرت القيمة من 880 لـ 768 */
   .hero{grid-template-columns:1fr;gap:20px}
   .hero-right img{width:180px;height:180px}
+  .case-card { grid-template-columns: 1fr; text-align: center; }
+  .case-card img { width: 100%; height: 250px; }
+  .quote-card { grid-template-columns: 1fr; text-align: center; }
+  .quote-card img { margin: 0 auto; }
 }
+/* --- نهاية إصلاح المشكلة --- */
